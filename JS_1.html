@@ -1,0 +1,321 @@
+<div> 
+    <p>Hello</p>
+</div>
+<script>
+
+debugger;
+    let a = 4;
+    let b = 5;
+    let c = a - 4;
+    let a4 = 5;
+    let c4 = 9;
+
+    alert(c + (a -(b +c4)));
+     
+
+    let name = prompt("What is your name");//ays funcian veradarcnum e arjheq ev veragrum enq "name" popoxakani mej
+
+    let lastName = prompt("What is your last name?");
+
+    alert("Nice to meet you " + name);
+
+    let x = 6;
+
+
+// boolean
+let y = "akiehfghfa";
+let o = 10
+let z = true;
+let u = false;
+
+let r = x === y; // havasar e;
+
+let b = x !== y; // havasar che
+
+let o2 = x > o; // >=, <, <=
+
+alert(r);
+alert(b);
+alert(o2);
+
+// if, else, elseif
+
+let x = prompt("How are you?");
+
+if(x === "good") {
+alert("vay inch lava");//kodayin block
+} else if(x === "very good"){
+alert("ohh inch lava");
+} else {
+alert("vay vay vay");
+}
+
+
+
+// Capitals game
+
+let points = 0;
+let resp0 = prompt("What is the capital of Armenia?");
+
+if(resp0 === "Yerevan") { points = points + 1;
+}
+
+let resp1 = prompt("What is the capital of Russia?")
+
+if(resp1 === "Moscow") {
+points = points +1;
+}
+
+let resp2 = prompt ("What is the capital of France?")
+
+if(resp2 === "Paris"){
+points = points +1;
+}
+
+alert("You received "+points+"/3");
+
+// Readability
+
+let userName = prompt("What is your name?"); 
+let userResponse = +prompt("What whole number comes after 6?");
+let points = 0;
+if(userResponse > 5){
+	if (userResponse === 7){
+  	alert("Great job " +userName); 
+		points = points + 1;
+  }
+} else {
+	alert(2);
+}
+	
+alert(points);
+
+
+//boolean operators
+
+// and operator
+let userResponse = +prompt("How old are you?");
+if(userResponse > 18 && userResponse < 60){
+alert("yay?");
+}
+
+// or operator
+let userResponse = +prompt("How old are you?");
+if(userResponse > 18 || userResponse < 10){
+alert("yay?");
+}
+
+//not operator
+let userResponse = +prompt("How old are you?");
+if(userResponse > 18 || userResponse < 10){
+alert("yay?");
+}
+
+// returns false (true && (false || false))
+let x = 20;
+let y = (x >=20 && (x + 11 === 30 || !!!(x - 3 > 10)));
+alert (y);
+
+// returns true (true || true)
+let x = 20;
+let y = ((!!!(x < 5 && x > 100)) || (x + 20 > 20 || !(x !== 3)));
+
+alert (y);
+
+// returns false (false || false)
+let x = 20;
+let y = !!!!!true;
+let z = x > 4;
+let b = x <= 21;
+let a = x > 300;
+
+let r = y || (z && !(a || b));
+alert(r);
+
+
+//While = qani der, continue = sharunaki ashxatacnel kod@, break = ashxatanqi avart
+
+while (true){
+	let userResponse = prompt("Hi");
+	if(userResponse === "Continue") {
+		continue;
+	}
+	alert("Ok, we will stop");
+  break;
+}
+
+
+let i = 1;
+while (i < 100){
+	alert ("yay");
+  i = i + 10;
+  if(i > 3) {
+  break;
+  }
+} 
+
+// array
+let x = ["Poghos", "Petros", "Kirakos"];
+let i = 0;
+while (i < x.length) {
+	alert(x[i]);
+  i = i + 1;
+}
+
+// Multidimentional Array 
+let x = [4,
+	"Vagho", 
+	true, 
+	false, 
+	[
+		5, 
+  	["Poghos", "Petros", "Kirakos"],
+  	99
+	] 
+];
+
+alert(x[4][1][2]);
+
+/*
+Tic Tac Toe Game
+A game that allows two players play Tic Tac Toe
+*/
+
+// board is the array in which we have all the information
+let board = [
+	["_", "_", "_"],
+	["_", "_", "_"],
+	["_", "_", "_"]
+];
+
+
+let player = "x" // current "x" or "o" user
+ 
+// the main loop of the game
+while(true) {
+let boardStr = board[0].join("  ") + 
+			"\n" + 
+      board[1].join("  ") + 
+      "\n" +
+      board[2].join("  "); 
+   
+      
+      
+ //recieve information from user
+let row = +prompt("Dear user, please provide the value for the row \n\n" +boardStr);
+ 
+let column = +prompt("Dear user, please provide the value for the column \n\n" +boardStr);
+
+
+//check the move is legal or not
+if(board[row][column] !== "_") {
+	alert("Not a legal move, you lose!");
+	break;
+}
+
+//place x or o onto the board
+board[row][column] = player;
+
+//switch players 
+if(player === "x") {
+	player = "o";
+} else {
+	player = "x"; 
+	}
+
+// alert winner
+if (board[row].join("") === "xxx") {
+alert("You win, X!");
+break;
+}
+ 	else if (board[row].join("") === "ooo") {
+	alert("You win, o!");
+  break;
+	} 
+  else if ((board[0][0] === "x" && board[1][1] === "x" && board[2][2] === "x") || (board[0][0] === "o" && board[1][1] === "o" && board[2][2] === "o")) {
+	  alert ("Cross win!");
+	  break;
+ 	} 
+ 	else if ((board[0][0] === "x" && board[1][0] === "x" && board[2][0] === "x") || (board[0][0] === "o" && board[1][0] === "o" && board[2][0] === "o")) {
+	alert("You win!");
+  break;
+  } 
+  else if ((board[0][2] === "x" && board[1][1] === "x" && board[2][0] === "x") || (board[0][2] === "o" && board[1][1] === "o" && board[2][0] === "o")) {
+	alert("You win!");
+  break;
+	}
+
+
+
+
+}
+
+
+// Array horizontal transform
+
+let a = ["Hakob", "Poghos", "Petros", "Aramis", "Nika"];
+ alert(a);
+ 
+let i = 0, //first index
+		i2 = a.length -1; //last index
+ 
+while(i < a.length/2) {  // i is less than 
+let d = a[i];
+a[i] = a[i2];
+a[i2] = d;
+
+i = i + 1;
+i2 = i2 - 1;
+}
+    
+alert(a);
+
+// Array@ bazmapatkel 2 ov
+
+let x = [5, 2, 20, 33, 11, 939, 1, 43, 89342, 95, 8718, 8389]
+
+let y = [];
+
+let i = 0;
+while(i < x.length) {
+	y[i] = x[i] * 2;
+i = i + 1;
+}
+
+alert(x);
+alert(y);
+
+// Find even numbers in array and print them
+let x = [5, 8, 19, 340, 24, 58, 818, 82, 11, 33];
+
+let y = []
+
+let i = 0;
+let i2 = 0;
+
+while(i < x.length) {
+	if (x[i] % 2 == 0) {
+  y[i2] = x[i];
+  i2 = i2 + 1;
+  }
+i = i + 1;
+}
+
+alert(y);
+
+// Functions
+// Opertators | Number String Boolean Array Function
+
+debugger;
+
+let add = function(y, z) {  //steghcwcinq funkcia, beragrecinq funkcian popoxakani mej vorpes arjheq
+return y + z;
+};
+
+let u = add(6, 10);  // kachecinq funkcian
+add(99, 100);
+alert(add(99, 100));
+
+
+
+</script> 
